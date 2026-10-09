@@ -1,6 +1,19 @@
 # A Fully Discrete, Mass-Conservative Adaptive Discontinuous Spectral-Element Method for the One-Dimensional Richards Equation in Mixed Form
 
-This repository contains the scripts for reproducing the numerical experiments and figures in the manuscript by Tristan Montoya and Raymond J. Spiteri (2026). The solver is implemented in [HydroTrixi.jl](https://github.com/uofs-simlab/HydroTrixi.jl).
+This repository provides the Julia code for reproducing the numerical experiments and figures presented in the following manuscript:
+
+```bibtex
+@unpublished{MontoyaSpiteriAdaptiveRichards2026,
+  title={A Fully Discrete, Mass-Conservative Adaptive Discontinuous
+         Spectral-Element Method for the One-Dimensional Richards Equation
+         in Mixed Form},
+  author={Montoya, Tristan and Spiteri, Raymond J.},
+  year={2026},
+  note={Submitted to SIAM Journal on Scientific Computing.},
+}
+```
+
+When using or adapting this code or the associated solver in [HydroTrixi.jl](https://github.com/uofs-simlab/HydroTrixi.jl) for your research, please cite the manuscript above.
 
 ## Abstract
 
@@ -18,7 +31,7 @@ cd paper-2026-adaptive-richards/code
 julia --project=. -e 'using Pkg; Pkg.instantiate()'
 ```
 
-The manifest fixes HydroTrixi to commit [`ae32e54`](https://github.com/uofs-simlab/HydroTrixi.jl/commit/ae32e540d7f648b5c2471279b3d42022421cc703), including the solver, diagnostics, and visualization methods used by these scripts. For repeated experiments and plotting, start a persistent REPL from `code/`:
+The environment fixes HydroTrixi.jl to tag [`v0.1.0`](https://github.com/uofs-simlab/HydroTrixi.jl/tree/v0.1.0), including the solver, diagnostics, and visualization methods used by these scripts. For repeated experiments and plotting, start a persistent REPL from `code/`:
 
 ```sh
 OPENBLAS_NUM_THREADS=1 julia --threads=1 --project=.
@@ -70,6 +83,8 @@ More specifications can be added to the vector to select multiple studies. Calli
 
 ## Generate the paper figures
 
+Saved numerical tables, conservation snapshots, and reference PDFs are included in the [convergence results](results/richards_convergence/final/) and [conservation results](results/richards_conservation/final/) directories. Use `final` in place of `RUN_ID` in the plotting commands below to regenerate the figures without rerunning the simulations.
+
 From the Julia REPL in `code/`, generate figures from the available saved tables. Missing solution snapshots are reported and skipped. Replace `RUN_ID` in each path with the saved run directory name for that suite; convergence and conservation runs generally have different `RUN_ID` values:
 
 ```julia
@@ -105,10 +120,10 @@ Input tables from `results/richards_convergence/RUN_ID/data/`:
 
 Manuscript output panels:
 
-- 1(a) `richards_manufactured_solution_dirichlet_dirichlet_space_N3.pdf`
-- 1(b) `richards_manufactured_solution_dirichlet_dirichlet_space_N4.pdf`
-- 1(c) `richards_manufactured_solution_dirichlet_neumann_space_N3.pdf`
-- 1(d) `richards_manufactured_solution_dirichlet_neumann_space_N4.pdf`
+- **(a)** `richards_manufactured_solution_dirichlet_dirichlet_space_N3.pdf`
+- **(b)** `richards_manufactured_solution_dirichlet_dirichlet_space_N4.pdf`
+- **(c)** `richards_manufactured_solution_dirichlet_neumann_space_N3.pdf`
+- **(d)** `richards_manufactured_solution_dirichlet_neumann_space_N4.pdf`
 
 ### Figure 2: Temporal convergence
 
@@ -119,8 +134,8 @@ Input tables from `results/richards_convergence/RUN_ID/data/`:
 
 Manuscript output panels:
   
-- 2(a) `richards_manufactured_solution_dirichlet_dirichlet_time_N3.pdf`
-- 2(b) `richards_manufactured_solution_dirichlet_neumann_time_N3.pdf`
+- **(a)** `richards_manufactured_solution_dirichlet_dirichlet_time_N3.pdf`
+- **(b)** `richards_manufactured_solution_dirichlet_neumann_time_N3.pdf`
 
 ### Figure 3: Infiltration profiles and meshes
 
@@ -138,10 +153,10 @@ The following conservation history tables must also be present in `results/richa
 
 Manuscript output panels:
 
-- 3(a) `richards_celia_haverkamp_mixed_rtol1e-7_half_solution_mesh.pdf`
-- 3(b) `richards_celia_haverkamp_mixed_rtol1e-7_full_solution_mesh.pdf`
-- 3(c) `richards_celia_new_mexico_mixed_rtol1e-7_half_solution_mesh.pdf`
-- 3(d) `richards_celia_new_mexico_mixed_rtol1e-7_full_solution_mesh.pdf`
+- **(a)** `richards_celia_haverkamp_mixed_rtol1e-7_half_solution_mesh.pdf`
+- **(b)** `richards_celia_haverkamp_mixed_rtol1e-7_full_solution_mesh.pdf`
+- **(c)** `richards_celia_new_mexico_mixed_rtol1e-7_half_solution_mesh.pdf`
+- **(d)** `richards_celia_new_mexico_mixed_rtol1e-7_full_solution_mesh.pdf`
 
 ### Figure 4: Accepted time step sizes
 
@@ -156,8 +171,8 @@ Input tables from `results/richards_conservation/RUN_ID/data/`:
 
 Manuscript output panels:
 
-- 4(a) `richards_celia_haverkamp_mixed_time_steps.pdf`
-- 4(b) `richards_celia_new_mexico_mixed_time_steps.pdf`
+- **(a)** `richards_celia_haverkamp_mixed_time_steps.pdf`
+- **(b)** `richards_celia_new_mexico_mixed_time_steps.pdf`
 
 ### Figure 5: Absolute mass bias
 
@@ -190,10 +205,10 @@ Input tables from `results/richards_conservation/RUN_ID/data/`:
 
 Manuscript output panels:
 
-- 5(a) `richards_celia_haverkamp_mixed_mass_bias.pdf`
-- 5(b) `richards_celia_haverkamp_pressure_head_mass_bias.pdf`
-- 5(c) `richards_celia_new_mexico_mixed_mass_bias.pdf`
-- 5(d) `richards_celia_new_mexico_pressure_head_mass_bias.pdf`
+- **(a)** `richards_celia_haverkamp_mixed_mass_bias.pdf`
+- **(b)** `richards_celia_haverkamp_pressure_head_mass_bias.pdf`
+- **(c)** `richards_celia_new_mexico_mixed_mass_bias.pdf`
+- **(d)** `richards_celia_new_mexico_pressure_head_mass_bias.pdf`
 
 ## License
 

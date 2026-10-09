@@ -10,13 +10,13 @@ SciMLBase = "0bca4576-84f4-4d90-8ffe-ffa030f20462"
 Trixi = "a7f1ee26-1774-49b1-8366-f1abc58fbfcb"
 
 [sources]
-HydroTrixi = {rev = "ae32e540d7f648b5c2471279b3d42022421cc703", url = "https://github.com/uofs-simlab/HydroTrixi.jl.git"}
+HydroTrixi = {rev = "v0.1.0", url = "https://github.com/uofs-simlab/HydroTrixi.jl.git"}
 
 [compat]
 CairoMakie = "0.15"
 Dates = "1"
 DelimitedFiles = "1"
-HydroTrixi = "0.1"
+HydroTrixi = "=0.1.0"
 LaTeXStrings = "1"
 LinearAlgebra = "1"
 Printf = "1"

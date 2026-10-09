@@ -2,7 +2,7 @@
 
 julia_version = "1.13.0"
 manifest_format = "2.1"
-project_hash = "90c4db2f543d67261877cdbe782ca6ab31d1069c"
+project_hash = "ed886e164dbcd6cd4e8ec65e18c39e534b65e6d8"
 
 [[deps.ADTypes]]
 deps = ["PrecompileTools"]
@@ -1137,8 +1137,8 @@ version = "2.14.0+0"
 
 [[deps.HydroTrixi]]
 deps = ["DiffEqBase", "LinearAlgebra", "LinearSolve", "MuladdMacro", "OrdinaryDiffEqCore", "OrdinaryDiffEqNonlinearSolve", "OrdinaryDiffEqRosenbrock", "PreallocationTools", "SciMLBase", "SparseArrays", "Trixi"]
-git-tree-sha1 = "5633b70241b865c2bcb44357a94ee57276b0aef0"
-repo-rev = "ae32e540d7f648b5c2471279b3d42022421cc703"
+git-tree-sha1 = "bbe203b73b9bcca52c5550a80283e2967a0b5d28"
+repo-rev = "v0.1.0"
 repo-url = "https://github.com/uofs-simlab/HydroTrixi.jl.git"
 uuid = "7af077dc-b170-402d-9829-aaaeff984f5f"
 version = "0.1.0"

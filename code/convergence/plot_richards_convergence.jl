@@ -42,7 +42,8 @@ function plot_study(path, rows, temporal, N, output_dir)
               [LaTeXString("10^{$p}") for p in error_exponents])
     output_path = joinpath(output_dir, replace(basename(path), ".dat" => ".pdf"))
     fig = plot_convergence_1d(groups; output_path, size = FIGURE_SIZE,
-        xlabel = temporal ? L"$\Delta t$ (s)" : L"$\Delta z$ (m)",
+        xlabel = temporal ? L"Time step size $\Delta t$ (s)" :
+                            L"Nominal mesh size $\Delta z$ (m)",
         ylabel = "Pressure-head error (m)",
         xticks = tick_spec, yticks, xlims = temporal ? nothing : SPATIAL_X_LIMITS,
         ylims = ERROR_LIMITS, legend_position = (:left, :top))

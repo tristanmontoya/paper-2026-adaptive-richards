@@ -113,13 +113,19 @@ function plot_study(table, output_directory, bias_axis)
     end
 
     bias_path = joinpath(output_directory, "$(table.name)_mass_bias.pdf")
-    plot_mass_bias_magnitude(paths; output_path = bias_path, time_column = "time_s",
-                             mass_balance_column = "mass_bias_m", labels,
-                             colors, linestyles, legend_position,
-                             xticks = (time_ticks, tick_labels),
-                             yticks = bias_axis.ticks,
-                             xlims = (0.0, table.final_time),
-                             ylims = bias_axis.limits)
+    bias_fig = plot_mass_bias_magnitude(paths; output_path = bias_path,
+                                        time_column = "time_s",
+                                        mass_balance_column = "mass_bias_m", labels,
+                                        colors, linestyles, legend_position,
+                                        xticks = (time_ticks, tick_labels),
+                                        yticks = bias_axis.ticks,
+                                        xlims = (0.0, table.final_time),
+                                        ylims = bias_axis.limits)
+    # Apply the manuscript terminology to the mass-bias plotter's fixed labels
+    ax = bias_fig.content[1]
+    ax.xlabel = L"Time $t$ (s)"
+    ax.ylabel = L"Absolute bias error $|\epsilon_{\mathrm{b}}(t)|$ (m)"
+    save(bias_path, bias_fig)
     output_paths = [bias_path]
 
     # The manuscript compares time steps for water-content solution transfer only
@@ -131,6 +137,8 @@ function plot_study(table, output_directory, bias_axis)
         plot_time_steps(water_content_paths; output_path = step_path,
                         step_column = "accepted_step", time_column = "time_s",
                         dt_column = "dt_s",
+                        xlabel = L"Time $t$ (s)",
+                        ylabel = L"Time step size $\Delta t$ (s)",
                         labels = RTOL_LABELS[water_content_tolerances],
                         colors = palette[water_content_tolerances],
                         legend_position = (:left, :top),
@@ -159,8 +167,8 @@ function plot_snapshots(table, output_directory)
                          mesh_vertices_x = filter(isfinite, values[:, 4]))
                 output_path = joinpath(output_directory, pdf_filename)
                 plot_solution_1d(data; output_path,
-                                  xlabel = "Distance below surface (m)",
-                                  ylabel = "Pressure head (m)",
+                                  xlabel = L"Depth $z$ (m)",
+                                  ylabel = L"Pressure head $\psi$ (m)",
                                   ylims = table.solution_ylims,
                                   show_element_boundaries = true)
                 push!(output_paths, output_path)
