@@ -7,9 +7,8 @@ using Dates, Printf
 
 const ERROR_LIMITS = (5.0e-13, 1.0e-3) # pressure-head error in metres
 const SPATIAL_X_LIMITS = (1.5e-4, 5.0e-3)
-const SPATIAL_X_TICKS = [0.0002, 0.0005, 0.001, 0.002, 0.004]
-const SPATIAL_TRIANGLE_GAP = 2.5
-const TEMPORAL_TRIANGLE_GAP = 3.0
+const SPATIAL_X_TICKS = [0.00025, 0.0005, 0.001, 0.002, 0.004]
+const TRIANGLE_GAP = 2.5
 const FIGURE_SIZE = (500, 350)
 
 function read_table(path)
@@ -51,11 +50,11 @@ function plot_study(path, rows, temporal, N, output_dir)
 
     plot_reference_triangle!(ax, groups, temporal ? 4 : N + 1;
         triangle_slope = :positive, trianglefontsize = 15,
-        gap_factor = temporal ? TEMPORAL_TRIANGLE_GAP : SPATIAL_TRIANGLE_GAP)
+        gap_factor = TRIANGLE_GAP)
     if temporal
         plot_reference_triangle!(ax, groups, 5; position = :above,
                                  triangle_slope = :positive, trianglefontsize = 15,
-                                 gap_factor = TEMPORAL_TRIANGLE_GAP)
+                                 gap_factor = TRIANGLE_GAP)
     end
 
     save(output_path, fig)

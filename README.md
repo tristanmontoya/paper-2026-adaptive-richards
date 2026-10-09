@@ -21,7 +21,7 @@ We present and analyze a spatially and temporally adaptive high-order method for
 
 ## Installation
 
-The scripts use syntax compatible with Julia 1.10 and newer; use Julia 1.13.0 to reproduce the recorded environment in `code/Manifest.toml`. 
+The scripts use syntax compatible with Julia 1.10 and newer; use Julia 1.13.1 to reproduce the recorded environment in `code/Manifest.toml`.
 
 Clone this repository and instantiate the environment from `code/`:
 
@@ -31,7 +31,7 @@ cd paper-2026-adaptive-richards/code
 julia --project=. -e 'using Pkg; Pkg.instantiate()'
 ```
 
-The environment fixes HydroTrixi.jl to tag [`v0.1.0`](https://github.com/uofs-simlab/HydroTrixi.jl/tree/v0.1.0), including the solver, diagnostics, and visualization methods used by these scripts. For repeated experiments and plotting, start a persistent REPL from `code/`:
+The environment fixes HydroTrixi.jl to tag [`v0.1.1`](https://github.com/uofs-simlab/HydroTrixi.jl/tree/v0.1.1), including the solver, diagnostics, and visualization methods used by these scripts. For repeated experiments and plotting, start a persistent REPL from `code/`:
 
 ```sh
 OPENBLAS_NUM_THREADS=1 julia --threads=1 --project=.

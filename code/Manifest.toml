@@ -1,8 +1,8 @@
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.13.0"
+julia_version = "1.13.1"
 manifest_format = "2.1"
-project_hash = "ed886e164dbcd6cd4e8ec65e18c39e534b65e6d8"
+project_hash = "cf0cd02e1debf9f99ece8479bc919ebe97d077a6"
 
 [[deps.ADTypes]]
 deps = ["PrecompileTools"]
@@ -1137,11 +1137,11 @@ version = "2.14.0+0"
 
 [[deps.HydroTrixi]]
 deps = ["DiffEqBase", "LinearAlgebra", "LinearSolve", "MuladdMacro", "OrdinaryDiffEqCore", "OrdinaryDiffEqNonlinearSolve", "OrdinaryDiffEqRosenbrock", "PreallocationTools", "SciMLBase", "SparseArrays", "Trixi"]
-git-tree-sha1 = "bbe203b73b9bcca52c5550a80283e2967a0b5d28"
-repo-rev = "v0.1.0"
+git-tree-sha1 = "78ed39456582342691991e048029aafed81ffb42"
+repo-rev = "v0.1.1"
 repo-url = "https://github.com/uofs-simlab/HydroTrixi.jl.git"
 uuid = "7af077dc-b170-402d-9829-aaaeff984f5f"
-version = "0.1.0"
+version = "0.1.1"
 weakdeps = ["CairoMakie", "LaTeXStrings"]
 
     [deps.HydroTrixi.extensions]
@@ -1477,7 +1477,7 @@ version = "1.9.1+0"
 [[deps.LibSSH2_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "Libdl", "OpenSSL_jll", "Zlib_jll"]
 uuid = "29816b5a-b9ab-546f-933c-edad1886dfa8"
-version = "1.11.103+0"
+version = "1.11.104+0"
 
 [[deps.Libdl]]
 uuid = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
