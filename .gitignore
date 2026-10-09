@@ -1,7 +1,7 @@
 # Numerical results: retain only the saved paper runs
 /results/*/*
-!/results/richards_convergence/final/
-!/results/richards_conservation/final/
+!/results/richards_convergence/20261009T184027772Z/
+!/results/richards_conservation/20261009T184027772Z/
 
 # Local Julia preferences and macOS metadata
 LocalPreferences.toml
