@@ -1,0 +1,25 @@
+[deps]
+CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
+HydroTrixi = "7af077dc-b170-402d-9829-aaaeff984f5f"
+LaTeXStrings = "b964fa9f-0449-5b57-a5c2-d3ea65f4040f"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+SciMLBase = "0bca4576-84f4-4d90-8ffe-ffa030f20462"
+Trixi = "a7f1ee26-1774-49b1-8366-f1abc58fbfcb"
+
+[sources]
+HydroTrixi = {rev = "ae32e540d7f648b5c2471279b3d42022421cc703", url = "https://github.com/uofs-simlab/HydroTrixi.jl.git"}
+
+[compat]
+CairoMakie = "0.15"
+Dates = "1"
+DelimitedFiles = "1"
+HydroTrixi = "0.1"
+LaTeXStrings = "1"
+LinearAlgebra = "1"
+Printf = "1"
+SciMLBase = "3.55"
+Trixi = "0.16.24"
+julia = "1.10"

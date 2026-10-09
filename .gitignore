@@ -1,0 +1,7 @@
+# Numerical results and generated figures
+/results/
+
+# Local Julia preferences and macOS metadata
+LocalPreferences.toml
+JuliaLocalPreferences.toml
+.DS_Store
