@@ -3,16 +3,19 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23264106.svg)](https://doi.org/10.5281/zenodo.23264106)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-This repository provides the Julia code for reproducing the numerical experiments and figures presented in the following manuscript:
+This repository provides the Julia code for reproducing the numerical experiments and figures presented in the following manuscript, available as an [arXiv preprint](https://arxiv.org/abs/2610.17031):
 
 ```bibtex
-@unpublished{MontoyaSpiteriAdaptiveRichards2026,
+@misc{MontoyaSpiteriAdaptiveRichards2026,
   title={A Fully Discrete, Mass-Conservative Adaptive Discontinuous
-         Spectral-Element Method for the One-Dimensional Richards Equation
-         in Mixed Form},
-  author={Montoya, Tristan and Spiteri, Raymond J.},
+         Spectral-Element Method for the One-Dimensional {Richards} 
+         Equation in Mixed Form},
+  author={Tristan Montoya and Raymond J. Spiteri},
   year={2026},
-  note={Submitted to SIAM Journal on Scientific Computing.},
+  eprint={2610.17031},
+  archivePrefix={arXiv},
+  primaryClass={math.NA},
+  url={https://arxiv.org/abs/2610.17031},
 }
 ```
 
